@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import utilities.TestBase;
-
 public class P01 extends TestBase {
     @Test
     public void test01() throws InterruptedException {
@@ -30,7 +29,6 @@ public class P01 extends TestBase {
         Thread.sleep(2000);
         driver.switchTo().alert().dismiss();
 
-
         //    click "Alert with Textbox" and click 'click the button to demonstrate the prompt box'
         //    and then sendKeys 'TechProEducation' (Please enter your name)
         driver.findElement(By.xpath("//*[text()='Alert with Textbox ']")).click();
@@ -41,12 +39,10 @@ public class P01 extends TestBase {
         Thread.sleep(2000);
         driver.switchTo().alert().accept();
 
-
         //    finally print on console this message "Hello TechProEducation How are you today"
         System.out.println(driver.findElement(By.xpath("//*[@id='demo1']")).getText());
 
         //    aseertion these message
-        Assert.assertEquals("Hello TechProEducation How are you today", driver.findElement(By.xpath("//*[@id='demo1']")).getText());
-
+        Assert.assertEquals("Hello TechProEducation How are you today",driver.findElement(By.xpath("//*[@id='demo1']")).getText());
     }
 }

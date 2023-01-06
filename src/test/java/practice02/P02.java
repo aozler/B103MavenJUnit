@@ -21,7 +21,7 @@ public class P02 extends TestBase {
     */
 
     @Test
-    public void test01() {
+    public void test01() throws InterruptedException {
 
         // https://www.jqueryscript.net/demo/Easy-iFrame-based-Twitter-Emoji-Picker-Plugin-jQuery-Emoojis/ sitesine gidin
         driver.get("https://www.jqueryscript.net/demo/Easy-iFrame-based-Twitter-Emoji-Picker-Plugin-jQuery-Emoojis/");
@@ -50,12 +50,13 @@ public class P02 extends TestBase {
         List<WebElement> list = driver.findElements(By.xpath("//input[@class='mdl-textfield__input']"));
 
         List<String> veriler = new ArrayList<>(Arrays.asList(
-                "Erol","Evren","selenium","lambda","java","sql","gitgithub","fsd","dfasf","lkjl","asdasd","asd","sda"));
+                "Arthur","Ozler","selenium","lambda","java","sql","gitgithub","fsd","dfasf","lkjl","asdasd","asd","sda"));
 
         for (int i = 0; i < list.size(); i++) {
             list.get(i).sendKeys(veriler.get(i));
         }
         //  apply button a basin
         driver.findElement(By.xpath("//*[text()='Apply']")).click();
+        Thread.sleep(3000);
     }
 }
